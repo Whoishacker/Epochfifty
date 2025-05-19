@@ -23,7 +23,7 @@ def get_image_paths(img_set):
 if __name__=='__main__':
     # original_images_folder = 'data2'
     # result_iamges_folder = 'imgs'
-    # # Crop_images_main(input_folder=original_images_folder, output_folder=result_iamges_folder)
+    # Crop_images_main(input_folder=original_images_folder, output_folder=result_iamges_folder)
     # Resize_images_main(input_folder=result_iamges_folder, output_folder=result_iamges_folder)
     # Enhance_images_main(input_folder=result_iamges_folder, output_folder=result_iamges_folder)
 
@@ -33,7 +33,7 @@ if __name__=='__main__':
     frame_imgs = get_image_paths('frame')
 
     # 将图片转为统一尺寸再拼接易成功`
-    stitcher = Stitcher(try_use_gpu=True, crop=False,)
+    stitcher = Stitcher(try_use_gpu=True, crop=False, confidence_threshold=0.8)
     panorama = stitcher.stitch(frame_imgs)
 
     image = Image.fromarray(panorama)
