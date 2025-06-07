@@ -33,7 +33,7 @@ if __name__=='__main__':
     frame_imgs = get_image_paths('frame')
 
     # 将图片转为统一尺寸再拼接易成功`
-    stitcher = Stitcher(try_use_gpu=True, crop=False, confidence_threshold=0.8)
+    stitcher = Stitcher(try_use_gpu=True, crop=False, confidence_threshold=0.5)
     panorama = stitcher.stitch(frame_imgs)
 
     image = Image.fromarray(panorama)
